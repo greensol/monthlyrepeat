@@ -14,90 +14,90 @@ import { Router } from '@angular/router';
 export class CheckoutEffects {
   isBuyNowAction: boolean;
 
-  // @Effect()
-  // AddToCart$ = this.actions$.pipe(
-  //   ofType(CheckoutActions.ADD_TO_CART),
-  //   switchMap<
-  //     Action & {
-  //       payload: { variant_id: number; quantity: number; isBuyNow: boolean };
-  //     },
-  //     Order
-  //   >(action => {
-  //     this.isBuyNowAction = action.payload.isBuyNow;
-  //     return this.checkoutService.createNewLineItem(
-  //       action.payload.variant_id,
-  //       action.payload.quantity
-  //     );
-  //   }),
-  //   map(order => {
-  //     if (this.isBuyNowAction) {
-  //       this.router.navigate(['checkout', 'cart']);
-  //     }
-  //     return this.actions.fetchCurrentOrderSuccess(order);
-  //   })
-  // );
+  @Effect()
+  AddToCart$ = this.actions$.pipe(
+    ofType(CheckoutActions.ADD_TO_CART),
+    switchMap<
+      Action & {
+        payload: { variant_id: number; quantity: number; isBuyNow: boolean };
+      },
+      any
+    >(action => {
+      this.isBuyNowAction = action.payload.isBuyNow;
+      return this.checkoutService.createNewLineItem(
+        action.payload.variant_id,
+        action.payload.quantity
+      );
+    }),
+    map(order => {
+      if (this.isBuyNowAction) {
+        this.router.navigate(['checkout', 'cart']);
+      }
+      return this.actions.fetchCurrentOrderSuccess(order);
+    })
+  );
 
-  // @Effect()
-  // OrderDetails$ = this.actions$.pipe(
-  //   ofType(CheckoutActions.GET_ORDER_DETAILS),
-  //   switchMap<Action, Order>(_ => this.checkoutService.getOrder()),
-  //   map(order => this.actions.fetchCurrentOrderSuccess(order))
-  // );
+  @Effect()
+  OrderDetails$ = this.actions$.pipe(
+    ofType(CheckoutActions.GET_ORDER_DETAILS),
+    switchMap<Action, any>(_ => this.checkoutService.getOrder()),
+    map(order => this.actions.fetchCurrentOrderSuccess(order))
+  );
 
-  // @Effect()
-  // BindAddress$ = this.actions$.pipe(
-  //   ofType(CheckoutActions.BIND_ADDRESS),
-  //   switchMap<
-  //     Action & { payload: { address: Address; orderId: number } },
-  //     Order
-  //   >(action => {
-  //     return this.addressService.bindAddressToOrder(
-  //       action.payload.address,
-  //       action.payload.orderId
-  //     );
-  //   }),
-  //   map(order => this.actions.fetchCurrentOrderSuccess(order))
-  // );
+  @Effect()
+  BindAddress$ = this.actions$.pipe(
+    ofType(CheckoutActions.BIND_ADDRESS),
+    switchMap<
+      Action & { payload: { address: Address; orderId: number } },
+      any
+    >(action => {
+      return this.addressService.bindAddressToOrder(
+        action.payload.address,
+        action.payload.orderId
+      );
+    }),
+    map(order => this.actions.fetchCurrentOrderSuccess(order))
+  );
 
-  // @Effect()
-  // BindPayment$ = this.actions$.pipe(
-  //   ofType(CheckoutActions.BIND_PAYMENT),
-  //   switchMap<
-  //     Action & {
-  //       payload: {
-  //         paymentMethodId: number;
-  //         orderId: number;
-  //         orderAmount: number;
-  //       };
-  //     },
-  //     Order
-  //   >(action => {
-  //     return this.paymentService.addPaymentToOrder(
-  //       action.payload.paymentMethodId,
-  //       action.payload.orderId,
-  //       action.payload.orderAmount
-  //     );
-  //   }),
-  //   map(order => this.actions.getOrderPaymentsSuccess(order))
-  // );
+  @Effect()
+  BindPayment$ = this.actions$.pipe(
+    ofType(CheckoutActions.BIND_PAYMENT),
+    switchMap<
+      Action & {
+        payload: {
+          paymentMethodId: number;
+          orderId: number;
+          orderAmount: number;
+        };
+      },
+      any
+    >(action => {
+      return this.paymentService.addPaymentToOrder(
+        action.payload.paymentMethodId,
+        action.payload.orderId,
+        action.payload.orderAmount
+      );
+    }),
+    map(order => this.actions.getOrderPaymentsSuccess(order))
+  );
 
-  // @Effect()
-  // ShippingPreferencess$ = this.actions$.pipe(
-  //   ofType(CheckoutActions.SHIPPING_PREFERENCES),
-  //   switchMap<
-  //     Action & { payload: { orderId: number; packages: Array<{}> } },
-  //     Order
-  //   >(action => {
-  //     return this.checkoutService.saveShippingPreferences(
-  //       action.payload.orderId,
-  //       action.payload.packages
-  //     );
-  //   }),
-  //   map(order => {
-  //     this.router.navigate(['/checkout', 'payment']);
-  //     return this.actions.fetchCurrentOrderSuccess(order);
-  //   })
-  // );
+  @Effect()
+  ShippingPreferencess$ = this.actions$.pipe(
+    ofType(CheckoutActions.SHIPPING_PREFERENCES),
+    switchMap<
+      Action & { payload: { orderId: number; packages: Array<{}> } },
+      any
+    >(action => {
+      return this.checkoutService.saveShippingPreferences(
+        action.payload.orderId,
+        action.payload.packages
+      );
+    }),
+    map(order => {
+      this.router.navigate(['/checkout', 'payment']);
+      return this.actions.fetchCurrentOrderSuccess(order);
+    })
+  );
 
   constructor(
     private actions$: Actions,

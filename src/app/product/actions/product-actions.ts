@@ -86,7 +86,7 @@ export class ProductActions {
     };
   }
 
-  getProductReviewsSuccess(reviews: Array<Review>) {
+  getProductReviewsSuccess(reviews: any) {
     return {
       type: ProductActions.GET_REVIEWS_SUCCESS,
       payload: reviews
@@ -99,7 +99,7 @@ export class ProductActions {
     };
   }
 
-  getBrandsSuccess(brands: Array<Brand>) {
+  getBrandsSuccess(brands: any) {
     return {
       type: ProductActions.GET_ALL_BRANDS_SUCCESS,
       payload: brands
@@ -113,7 +113,7 @@ export class ProductActions {
     };
   }
 
-  writeProductReviewSuccess(review: Review) {
+  writeProductReviewSuccess(review: any) {
     return {
       type: ProductActions.WRITE_REVIEW_SUCCESS,
       payload: review
@@ -127,7 +127,7 @@ export class ProductActions {
     };
   }
 
-  getRatingsOptionsSuccess(ratingOptions: Array<RatingOption>) {
+  getRatingsOptionsSuccess(ratingOptions: any) {
     return {
       type: ProductActions.GET_RATING_OPTIONS_SUCCESS,
       payload: ratingOptions

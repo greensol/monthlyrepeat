@@ -1,4 +1,4 @@
-import { Order } from '../../core/models/order';
+// import { Order } from '../../core/models/order';
 import { Address } from '../../core/models/address';
 import { CState } from '../../core/models/state';
 import { Country } from '../../core/models/country';
@@ -23,7 +23,7 @@ export class UserActions {
     return { type: UserActions.GET_USER_ORDERS };
   }
 
-  getUserOrdersSuccess(orders: Order[]) {
+  getUserOrdersSuccess(orders: any) {
     return { type: UserActions.GET_USER_ORDERS_SUCCESS, payload: orders };
   }
 
@@ -33,7 +33,7 @@ export class UserActions {
     };
   }
 
-  fetchUserAddressSuccess(addressList: Address[]) {
+  fetchUserAddressSuccess(addressList: any) {
     return {
       type: UserActions.FETCH_USER_ADDRESS_SUCCEESS,
       payload: addressList
@@ -46,7 +46,7 @@ export class UserActions {
     };
   }
 
-  fetchCountriesSuccess(countries: Country[]) {
+  fetchCountriesSuccess(countries: any) {
     return {
       type: UserActions.FETCH_COUNTRIES_SUCCEESS,
       payload: countries
@@ -60,7 +60,7 @@ export class UserActions {
     };
   }
 
-  fetchStatesSuccess(states: CState[]) {
+  fetchStatesSuccess(states: any) {
     return {
       type: UserActions.FETCH_STATES_SUCCEESS,
       payload: states
