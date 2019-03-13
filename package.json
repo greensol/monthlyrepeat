@@ -28,7 +28,7 @@
     "build:client-and-server-bundles:prod-custom": "npm run build:prod-custom && ng run angularspree:server:prod-custom",
     "build:client-and-server-bundles:prod-ng-spree": "npm run build:prod-ng-spree && ng run angularspree:server:prod-ng-spree",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --prod",
     "start": "node server.js"
   },
   "private": true,
