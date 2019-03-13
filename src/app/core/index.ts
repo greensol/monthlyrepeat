@@ -48,10 +48,10 @@ import { ResponseInterceptor } from './interceptors/reponse.interceptor';
       UserEffects
     ]),
     HttpClientModule,
-    NgProgressModule.forRoot({
-      meteor: false
-    }),
-    NgProgressHttpModule.forRoot()
+    // NgProgressModule.forRoot({
+    //   meteor: false
+    // }),
+    // NgProgressHttpModule.forRoot()
   ],
   providers: [
     VariantParserService,

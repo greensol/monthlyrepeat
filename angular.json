@@ -100,6 +100,24 @@
                   "with": "src/environments/environment.prod-custom.ts"
                 }
               ]
+            },
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
             }
           }
         },
@@ -147,7 +165,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod-custom.ts"
+                  "with": "src/environments/environment.ts"
                 }
               ]
             }
@@ -172,6 +190,9 @@
               "browserTarget": "angularspree:build:dev-custom"
             },
             "prod-custom": {
+              "browserTarget": "angularspree:build:prod-custom"
+            },
+            "production":{
               "browserTarget": "angularspree:build:prod-custom"
             }
           }
