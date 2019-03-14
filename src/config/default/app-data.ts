@@ -74,17 +74,17 @@ export const DEFAULT_APP_DATA = {
   ],
   footer_social_links: [
     {
-      link_url: 'https://twitter.com/aviacommerce',
+      link_url: '',
       name: 'Twitter',
       icon: 'fa fa-twitter-square'
     },
     {
-      link_url: 'https://www.instagram.com/aviacommerce/',
+      link_url: '',
       name: 'Instagram',
       icon: 'fa fa-instagram'
     },
     {
-      link_url: 'https://plus.google.com/',
+      link_url: '',
       name: 'Google +',
       icon: 'fa fa-google-plus-square'
     },
