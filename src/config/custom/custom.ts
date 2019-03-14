@@ -3,7 +3,8 @@ import { CUSTOM_META_DATA } from './meta-data';
 
 export const CUSTOM_CONFIG = {
   // Add Your custom configs here
-  prodApiEndpoint: 'http://my-prod.api.example.com/',
+  // prodApiEndpoint: 'http://my-prod.api.example.com/',
+  prodApiEndpoint: 'https://aviastore.aviacomapi.com/',
   appName: 'Custom App Name',
   fevicon: 'https://via.placeholder.com/350x150',
   header: {

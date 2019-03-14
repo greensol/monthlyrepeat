@@ -6,8 +6,9 @@ import { DEFAULT_CONFIG } from '../config/default/default';
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  apiEndpoint: 'http://localhost:3000/',
+  production: true,
+  // prodApiEndpoint: 'http://localhost:3000/',
+  apiEndpoint: 'https://aviastore.aviacomapi.com/',
   appName: DEFAULT_CONFIG.appName,
   config: DEFAULT_CONFIG
 };
