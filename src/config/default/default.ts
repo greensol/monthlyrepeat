@@ -24,7 +24,7 @@ export const DEFAULT_CONFIG = {
   payuBizSalt: 'eCwWELxi',
   payuBizKey: 'gtKFFx',
   freeShippingAmount: 50,
-  currency_symbol: '$', // USD $
+  currency_symbol: 'Rs', // USD $
   PaymentMethodCod: 'COD',
   PaymentMethodPayubiz: 'Payubiz',
   defaultPaymentMethod: 'Payubiz',
