@@ -27,6 +27,11 @@
                 "output": "/"
               },
               {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              },
+              {
                 "glob": "manifest.json",
                 "input": "src",
                 "output": "/"
@@ -35,6 +40,7 @@
               "src/manifest.json"
             ],
             "styles": [
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
@@ -192,7 +198,7 @@
             "prod-custom": {
               "browserTarget": "angularspree:build:prod-custom"
             },
-            "production":{
+            "production": {
               "browserTarget": "angularspree:build:prod-custom"
             }
           }
@@ -212,6 +218,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
@@ -244,7 +251,10 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
             "exclude": []
           }
         }
@@ -266,7 +276,9 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["e2e/tsconfig.e2e.json"],
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
             "exclude": []
           }
         }
@@ -284,5 +296,6 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
-  }
+  },
+  "defaultProject": "angularspree"
 }
