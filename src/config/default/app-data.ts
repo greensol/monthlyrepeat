@@ -106,6 +106,6 @@ export const DEFAULT_APP_DATA = {
   ],
   contact_info: {
     contact_no: '888-888-xxx',
-    copyright: 'Copyright © 2018 AviaCommerce, Inc.'
+    copyright: 'Copyright © 2018 MR Technologies, Inc.'
   }
 };
